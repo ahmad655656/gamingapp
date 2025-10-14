@@ -1,101 +1,189 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+
+const allGames = [
+  {
+    id: 1,
+    name: "لعبة الذاكرة السريعة",
+    image: "https://images.pexels.com/photos/269851/pexels-photo-269851.jpeg",
+    category: "ذاكرة",
+    age: "للجميع",
+    players: "لاعب واحد",
+    difficulty: "سهل",
+  },
+  {
+    id: 2,
+    name: "تحدي الذكاء المنطقي",
+    image: "https://images.pexels.com/photos/432722/pexels-photo-432722.jpeg",
+    category: "ذكاء",
+    age: "للكبار",
+    players: "لاعبان",
+    difficulty: "صعب",
+  },
+  {
+    id: 3,
+    name: "سباق التفكير السريع",
+    image: "https://images.pexels.com/photos/270807/pexels-photo-270807.jpeg",
+    category: "سرعة بديهة",
+    age: "للصغار",
+    players: "لاعب واحد",
+    difficulty: "متوسط",
+  },
+  {
+    id: 4,
+    name: "الشطرنج الكلاسيكي",
+    image: "https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg",
+    category: "ذكاء",
+    age: "للجميع",
+    players: "لاعبان",
+    difficulty: "صعب",
+  },
+  {
+    id: 5,
+    name: "ألغاز الصور",
+    image: "https://images.pexels.com/photos/1574717/pexels-photo-1574717.jpeg",
+    category: "ألغاز",
+    age: "للجميع",
+    players: "لاعب واحد",
+    difficulty: "سهل",
+  },
+
+  // 🌟 الإضافة الجديدة 1: سيد الاستراتيجية (Go)
+  {
+    id: 6,
+    name: "سيد الاستراتيجية (Go)",
+    image: "https://images.pexels.com/photos/592398/pexels-photo-592398.jpeg",
+    category: "استراتيجية",
+    age: "للكبار",
+    players: "لاعبان",
+    difficulty: "صعب جداً", // إضافة مستوى صعوبة جديد
+  },
+
+  // 🤯 الإضافة الجديدة 2: متاهة المنطق المتعدد
+  {
+    id: 7,
+    name: "متاهة المنطق المتعدد",
+    image: "https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg",
+    category: "منطق",
+    age: "للكبار",
+    players: "لاعب واحد",
+    difficulty: "صعب جداً", // إضافة مستوى صعوبة جديد
+  },
+];
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [filters, setFilters] = useState({
+    category: "",
+    age: "",
+    players: "",
+    difficulty: "",
+  });
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const filteredGames = allGames.filter(
+    (game) =>
+      (!filters.category || game.category === filters.category) &&
+      (!filters.age || game.age === filters.age) &&
+      (!filters.players || game.players === filters.players) &&
+      (!filters.difficulty || game.difficulty === filters.difficulty)
+  );
+
+  // استخراج قائمة الفئات و الصعوبات المتاحة بعد الإضافة
+  const availableCategories = [...new Set(allGames.map(g => g.category))];
+  const availableDifficulties = [...new Set(allGames.map(g => g.difficulty))];
+
+  return (
+    <div className="min-h-screen p-6 text-white bg-gradient-to-br from-indigo-900 via-blue-800 to-cyan-700">
+      <header className="mb-10 text-center">
+        <h1 className="mb-2 text-4xl font-extrabold drop-shadow-lg">🧩 ألعاب الذكاء</h1>
+        <p className="text-lg text-gray-200">
+          اختبر قدراتك الفكرية وتحدّ أصدقاءك في ألعاب ذكاء مناسبة للكبار والصغار!
+        </p>
+      </header>
+
+      {/* 🎛️ الفلاتر */}
+      <div className="grid grid-cols-1 gap-4 p-4 mb-8 shadow-lg bg-white/10 backdrop-blur-md rounded-2xl md:grid-cols-4 sm:grid-cols-2">
+        {/* فئة اللعبة */}
+        <select
+          className="p-2 text-white border border-gray-700 rounded-lg bg-gray-900/50 focus:ring-2 focus:ring-cyan-400"
+          value={filters.category}
+          onChange={(e) => setFilters({ ...filters, category: e.target.value })}
+        >
+          <option value="">🧠 نوع اللعبة</option>
+          {availableCategories.map(cat => (
+            <option key={cat} value={cat}>{cat}</option>
+          ))}
+        </select>
+
+        {/* الفئة العمرية */}
+        <select
+          className="p-2 text-white border border-gray-700 rounded-lg bg-gray-900/50 focus:ring-2 focus:ring-cyan-400"
+          value={filters.age}
+          onChange={(e) => setFilters({ ...filters, age: e.target.value })}
+        >
+          <option value="">👨‍👩‍👧‍👦 الفئة العمرية</option>
+          <option value="للصغار">للصغار</option>
+          <option value="للكبار">للكبار</option>
+          <option value="للجميع">للجميع</option>
+        </select>
+
+        {/* عدد اللاعبين */}
+        <select
+          className="p-2 text-white border border-gray-700 rounded-lg bg-gray-900/50 focus:ring-2 focus:ring-cyan-400"
+          value={filters.players}
+          onChange={(e) => setFilters({ ...filters, players: e.target.value })}
+        >
+          <option value="">🎮 عدد اللاعبين</option>
+          <option value="لاعب واحد">لاعب واحد</option>
+          <option value="لاعبان">لاعبان</option>
+        </select>
+
+        {/* مستوى الصعوبة */}
+        <select
+          className="p-2 text-white border border-gray-700 rounded-lg bg-gray-900/50 focus:ring-2 focus:ring-cyan-400"
+          value={filters.difficulty}
+          onChange={(e) => setFilters({ ...filters, difficulty: e.target.value })}
+        >
+          <option value="">🎯 مستوى الصعوبة</option>
+          {availableDifficulties.map(diff => (
+            <option key={diff} value={diff}>{diff}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* 🕹️ عرض الألعاب */}
+      {filteredGames.length === 0 ? (
+        <p className="mt-10 text-lg text-center text-gray-200">
+          😅 لا توجد ألعاب تطابق الفلاتر المحددة.
+        </p>
+      ) : (
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {filteredGames.map((game) => (
+            <div
+              key={game.id}
+              className="p-4 transition-all duration-300 shadow-lg cursor-pointer bg-white/10 backdrop-blur-md rounded-2xl hover:shadow-cyan-500/40 hover:scale-105"
+            >
+              <div className="relative w-full h-40 mb-3">
+                <Image
+                  src={game.image}
+                  alt={game.name}
+                  fill
+                  className="object-cover rounded-xl"
+                />
+              </div>
+              <h3 className="mb-1 text-lg font-bold text-cyan-300">{game.name}</h3>
+              <p className="text-sm text-gray-200">
+                🎯 {game.category} | 👥 {game.players} | 🔥 {game.difficulty}
+              </p>
+              <p className="mt-1 text-xs text-gray-400">👶 {game.age}</p>
+              <button className="w-full py-2 mt-3 font-semibold rounded-lg bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400">
+                <Link href={`/game/${game.id}`}>🎮 العب الآن</Link>
+              </button>
+            </div>
+          ))}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      )}
     </div>
   );
 }
