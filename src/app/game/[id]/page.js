@@ -929,7 +929,7 @@ export function GoGame() {
     <div className="flex justify-center min-h-screen p-6 bg-gray-900">
       <div className="w-full max-w-5xl">
         <h2 className="mb-4 text-4xl font-extrabold text-center text-yellow-400">سيد الاستراتيجية: Go ضد AI قاتل 🤖</h2>
-        <p className="mb-8 text-lg text-center text-gray-400">شبكة 5x5 - **القبض هو مفتاح الفوز!**</p>
+        <p className="mb-8 text-lg text-center text-gray-400">شبكة 5x5  القبض هو مفتاح الفوز!</p>
         
         <div className="flex gap-8">
             
@@ -1001,15 +1001,15 @@ export function GoGame() {
                     </li>
                     <li>
                         <span className="text-lg font-bold text-white">الحريات (Liberties)</span>
-                        <p className="mt-1 mr-4 text-sm">الحجر أو المجموعة يجب أن تكون لها **مساحة فارغة واحدة على الأقل** (حرية) مجاورة لها.</p>
+                        <p className="mt-1 mr-4 text-sm">الحجر أو المجموعة يجب أن تكون لها **مساحة فارغة واحدة على الأقل (حرية) مجاورة لها.</p>
                     </li>
                     <li>
                         <span className="text-lg font-bold text-white">القبض (Capture)</span>
-                        <p className="mt-1 mr-4 text-sm">إذا تم تطويق مجموعة من أحجار الخصم **بالكامل**، فإنها تفقد حرياتها وتُزال من اللوحة وتُحسب كنقاط لك.</p>
+                        <p className="mt-1 mr-4 text-sm">إذا تم تطويق مجموعة من أحجار الخصم بالكامل، فإنها تفقد حرياتها وتُزال من اللوحة وتُحسب كنقاط لك.</p>
                     </li>
                     <li>
                         <span className="text-lg font-bold text-red-300">قاعدة الانتحار (No Suicide)</span>
-                        <p className="mt-1 mr-4 text-sm">لا يسمح بوضع حجر في نقطة يؤدي فيها إلى **فقدان كل حريات** مجموعتك الجديدة، إلا إذا كانت هذه الحركة تؤدي إلى القبض على حجر خصم في نفس الوقت.</p>
+                        <p className="mt-1 mr-4 text-sm">لا يسمح بوضع حجر في نقطة يؤدي فيها إلى فقدان كل حريات مجموعتك الجديدة، إلا إذا كانت هذه الحركة تؤدي إلى القبض على حجر خصم في نفس الوقت.</p>
                     </li>
                     <li>
                         <span className="text-lg font-bold text-white">نهاية اللعبة</span>
@@ -1168,7 +1168,7 @@ function DeepLogicPuzzle() {
 
 
 // 🧠 صفحة اللعبة الرئيسية
-export default function page() {
+export default function Page() {
   const { id } = useParams();
   const router = useRouter();
   const [started, setStarted] = useState(false);
