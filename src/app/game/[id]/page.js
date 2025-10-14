@@ -85,7 +85,7 @@ function MemoryGame() {
 
   useEffect(() => {
     initializeGame();
-  }, []);
+  }, [won]);
 
   const flipCard = (index) => {
     if (won || flipped.length === 2 || flipped.includes(index) || matched.includes(index)) return;
@@ -178,7 +178,7 @@ function LogicGame() {
 
   useEffect(() => {
     generateQuestion();
-  }, []);
+  }, [question]);
 
   // ⏱️ العد التنازلي
   useEffect(() => {
