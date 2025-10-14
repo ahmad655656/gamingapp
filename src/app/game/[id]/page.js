@@ -1230,7 +1230,7 @@ export default function Page() {
             {game.type !== "memory" && game.type !== "logic" && game.type !== "speed" && 
              game.type !== "chess" && game.type !== "colorChallenge" && 
              game.type !== "advanced_strategy" && game.type !== "deep_logic_puzzle" && (
-                <p className="mt-10 text-lg text-gray-200">🚧 اللعبة "{game.name}" قيد التطوير حالياً...</p>
+                <p className="mt-10 text-lg text-gray-200">🚧 اللعبة {game.name} قيد التطوير حالياً...</p>
             )}
           </>
         )}
