@@ -1,43 +1,60 @@
 {
-  "background_color": "#ffffff",
-  "description": "تطبيق ألعاب الذكاء",
+  "name": "Haedara Gaming",
+  "short_name": "HaedaraGame",
+  "description": "تطبيق ألعاب الذكاء والألغاز الممتع من Haedara! اكتشف ألعابًا تختبر ذكاءك وتمنحك التسلية والتحدي في أي وقت.",
   "dir": "ltr",
+  "lang": "ar",
   "display": "standalone",
-  "name": "app-game-tfr7.vercel",
-  "orientation": "any",
-  "scope": "/",
-  "short_name": "app-game-tfr7.vercel",
   "start_url": "/",
-  "theme_color": "#ffffff",
-   "icons": [
-  {
-    "src": "/icons/icon-192x192.png", 
-    "type": "image/png",
-    "sizes": "192x192",
-    "purpose": "any"
-  },
-  {
-    "src": "/icons/icon-512x512-1.png", 
-    "type": "image/png",
-    "sizes": "512x512",
-    "purpose": "any"
-  },
-  {
-    "src": "/icons/maskable_icon.png", 
-    "type": "image/png",
-    "sizes": "512x512",
-    "purpose": "maskable"
-  }
-
-],
-  "theme_color": "#00ffff", 
-  "background_color": "#ffffff",
-  "display": "standalone",
+  "scope": "/",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "categories": ["games", "puzzle", "entertainment"],
+  "iarc_rating_id": "e10f4b0a-0000-0000-0000-000000000000",
   "prefer_related_applications": false,
-  "categories": [
-    "games"
+  "related_applications": [],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512-1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ألعب الآن",
+      "short_name": "ألعب",
+      "url": "/play",
+      "description": "انتقل مباشرة إلى قسم الألعاب المميزة",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "ألعاب جديدة",
+      "short_name": "جديد",
+      "url": "/new",
+      "description": "اكتشف أحدث الألعاب المضافة إلى Haedara Gaming",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "web+game",
+      "url": "/?launch=%s"
+    }
   ],
   "edge_side_panel": {
-    "preferred_width": 0
+    "preferred_width": 400
   }
 }
