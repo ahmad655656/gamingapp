@@ -1,16 +1,14 @@
-import localFont from "next/font/local";
+// src/app/layout.js
+
+// 🛑 تم حذف: import localFont from "next/font/local";
+import { Inter } from "next/font/google"; // ✅ استبدال بخط Google (Inter كمثال)
 import "./globals.css";
 import ServiceWorkerRegister from "./ServiceWorkerRegister";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-});
+// 1. تعريف خط Google
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-});
+// 🛑 تم حذف: تعريف geistMono و geistSans
 
 export const metadata = {
   title: "ألعاب الذكاء",
@@ -22,18 +20,19 @@ export default function RootLayout({ children }) {
     <html
       lang="ar"
       dir="rtl"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      // 🛑 تم تعديل: استخدام خط Inter بدلاً من geistSans و geistMono
+      className={`${inter.variable} font-sans`} 
     >
       <body
         className={`
-          ${geistSans.variable} ${geistMono.variable}
+          ${inter.variable} font-sans
           antialiased
           bg-gradient-to-br from-[#020617] via-[#04102a] to-[#030a1e]
           min-h-screen
         `}
       >
         {children}
-        <ServiceWorkerRegister /> {/* ✅ تسجيل الـ Service Worker */}
+        <ServiceWorkerRegister />
       </body>
     </html>
   );
