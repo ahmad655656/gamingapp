@@ -235,7 +235,7 @@ export default function Page() {
   );
 }
 const FilterSelect = ({ label, icon, value, onChange, options }) => (
-  <div className="relative group bg-gradient-to-br from-[#0a1628]/80 to-[#0e223a]/70 border border-cyan-400/30 rounded-2xl p-4 backdrop-blur-lg shadow-[0_0_20px_rgba(0,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-500">
+  <div className="relative group cursor-pointer bg-gradient-to-br from-[#0a1628]/80 to-[#0e223a]/70 border border-cyan-400/30 rounded-2xl p-4 backdrop-blur-lg shadow-[0_0_20px_rgba(0,255,255,0.1)] hover:shadow-[0_0_25px_rgba(0,255,255,0.4)] transition-all duration-500">
     {/* الأيقونة والعنوان */}
     <div className="flex items-center gap-3 mb-3">
       <span className="text-3xl text-cyan-400 drop-shadow-[0_0_10px_rgba(0,255,255,0.6)]">
@@ -246,7 +246,7 @@ const FilterSelect = ({ label, icon, value, onChange, options }) => (
 
     {/* القائمة المنسدلة */}
     <select
-      className="w-full bg-gray-900/50 border border-cyan-500/40 text-white text-base rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 hover:bg-gray-900/70 cursor-pointer transition-all duration-300"
+      className="w-full bg-gray-900/50 border border-cyan-500/40 text-white text-base rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400/70 hover:bg-gray-900/70 cursor-pointer transition-all sticky duration-300 z-10"
       value={value}
       onChange={onChange}
     >
@@ -264,4 +264,5 @@ const FilterSelect = ({ label, icon, value, onChange, options }) => (
     <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-cyan-400/40 transition-all duration-500"></div>
   </div>
 );
+
 
