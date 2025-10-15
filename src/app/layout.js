@@ -1,32 +1,27 @@
 // src/app/layout.js
 
-// 🛑 تم حذف: import localFont from "next/font/local";
-import { Inter } from "next/font/google"; // ✅ استبدال بخط Google (Inter كمثال)
+import { Inter } from "next/font/google"; 
 import "./globals.css";
 import ServiceWorkerRegister from "./ServiceWorkerRegister";
 
 // 1. تعريف خط Google
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-// 🛑 تم حذف: تعريف geistMono و geistSans
-
-// src/app/layout.js (الإصلاح الموصى به)
-
+// 2. تعريف بيانات التعريف (metadata) وإضافة رابط Manifest
 export const metadata = {
   title: "ألعاب الذكاء",
   description: "تطبيق ألعاب الذكاء",
-  
-  // 👈 إضافة المسار إلى ملف manifest.json
+  // ✅ إضافة المسار إلى ملف manifest.json - ضروري لربط PWA
   manifest: "/manifest.json", 
 };
 
-// ... باقي الكود يظل كما هو
+// 3. تصدير المكون الرئيسي RootLayout
 export default function RootLayout({ children }) {
   return (
     <html
       lang="ar"
       dir="rtl"
-      // 🛑 تم تعديل: استخدام خط Inter بدلاً من geistSans و geistMono
+      // ✅ استخدام خط Inter بدلاً من الخطوط المحلية
       className={`${inter.variable} font-sans`} 
     >
       <body

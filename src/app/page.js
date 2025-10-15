@@ -157,7 +157,7 @@ export default function Page() {
       </header>
 
      {/* 🔹 قسم الفلاتر */}
-<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14 relative z-10">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14 relative z-20">
   <FilterSelect
     label="نوع اللعبة"
     icon={getFilterIcon("category")}
