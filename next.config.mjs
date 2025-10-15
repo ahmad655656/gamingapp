@@ -12,6 +12,7 @@ const withPWA = nextPWA({
 
 // 2. تعريف الإعدادات الأساسية لـ Next.js
 const nextConfig = {
+    experimental: { appDir: true }, // مهم جدًا
   images: {
     domains: ["images.pexels.com", "images.unsplash.com"],
   },
