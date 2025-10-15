@@ -111,7 +111,7 @@ const getFilterIcon = (filterName) => {
   }
 };
 
-export default function Home() {
+export default function Page() {
   const [filters, setFilters] = useState({
     category: "",
     age: "",
