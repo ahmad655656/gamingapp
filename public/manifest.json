@@ -12,8 +12,60 @@
   "theme_color": "#00ffff",
   "categories": ["games", "puzzle", "entertainment"],
   "iarc_rating_id": "e10f4b0a-0000-0000-0000-000000000000",
-  "prefer_related_applications": false,
-  "related_applications": [],
+  
+  "id": "/", 
+  
+  "prefer_related_applications": false, 
+
+  "screenshots": [
+    {
+      "src": "/screenshots/mobile-screenshot-1.png",
+      "sizes": "642x1341",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "واجهة الهاتف الرئيسية"
+    }
+  ],
+  
+  "display_override": [
+    "window-controls-overlay", 
+    "standalone"               
+  ],
+
+  "scope_extensions": [
+    {
+      "origin": "https://*.gaming.com"
+    }
+  ],
+
+  "file_handlers": [
+    {
+      "action": "/open-level", 
+      "accept": {
+        "application/json": [".level", ".gameconfig"]
+      }
+    }
+  ],
+
+  "launch_handler": {
+    "client_mode": "navigate-existing" 
+  },
+  
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "application/x-www-form-urlencoded",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  
+  "note_taking": {
+    "new_window_urls": ["/new-game-note"]
+  },
+
   "icons": [
     {
       "src": "/icons/icon-192x192.png",
