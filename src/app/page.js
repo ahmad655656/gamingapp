@@ -7,7 +7,7 @@ const allGames = [
   {
     id: 1,
     name: "لعبة الذاكرة السريعة",
-    image: "https://images.pexels.com/photos/269851/pexels-photo-269851.jpeg",
+    image: "/asset/11.webp",
     category: "ذاكرة",
     age: "للجميع",
     players: "لاعب واحد",
@@ -17,7 +17,7 @@ const allGames = [
   {
     id: 2,
     name: "تحدي الذكاء المنطقي",
-    image: "https://images.pexels.com/photos/432722/pexels-photo-432722.jpeg",
+    image: "/asset/22.webp",
     category: "ذكاء",
     age: "للكبار",
     players: "لاعبان",
@@ -27,7 +27,7 @@ const allGames = [
   {
     id: 3,
     name: "سباق التفكير السريع",
-    image: "https://images.pexels.com/photos/270807/pexels-photo-270807.jpeg",
+    image: "/asset/33.webp",
     category: "سرعة بديهة",
     age: "للصغار",
     players: "لاعب واحد",
@@ -37,7 +37,7 @@ const allGames = [
   {
     id: 4,
     name: "الشطرنج الكلاسيكي",
-    image: "https://images.pexels.com/photos/260024/pexels-photo-260024.jpeg",
+    image: "/asset/44.webp",
     category: "ذكاء",
     age: "للجميع",
     players: "لاعبان",
@@ -47,7 +47,7 @@ const allGames = [
   {
     id: 5,
     name: "ألغاز الصور",
-    image: "https://images.pexels.com/photos/1574717/pexels-photo-1574717.jpeg",
+    image: "/asset/55.webp",
     category: "ألغاز",
     age: "للجميع",
     players: "لاعب واحد",
@@ -57,7 +57,7 @@ const allGames = [
   {
     id: 6,
     name: "سيد الاستراتيجية (Go)",
-    image: "https://images.pexels.com/photos/592398/pexels-photo-592398.jpeg",
+    image: "/asset/66.webp",
     category: "استراتيجية",
     age: "للكبار",
     players: "لاعبان",
@@ -67,7 +67,7 @@ const allGames = [
   {
     id: 7,
     name: "متاهة المنطق المتعدد",
-    image: "https://images.pexels.com/photos/355948/pexels-photo-355948.jpeg",
+    image: "/asset/77.webp",
     category: "منطق",
     age: "للكبار",
     players: "لاعب واحد",
@@ -77,7 +77,7 @@ const allGames = [
   {
     id: 8,
     name: "سباق الأرقام المتفجرة",
-    image: "https://images.pexels.com/photos/4030088/pexels-photo-4030088.jpeg",
+    image: "/asset/88.webp",
     category: "سرعة وذاكرة",
     age: "للجميع",
     players: "لاعب واحد (ضد الذكاء الاصطناعي)",
@@ -87,7 +87,7 @@ const allGames = [
   {
   id: 9,
   name: "غزو العقول: اختبار الذكاء الأعلى",
-  image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg",
+  image: "/asset/99.webp",
   category: "ذكاء وتحليل",
   age: "للكبار",
   players: "لاعب واحد أو ضد الذكاء الاصطناعي",
