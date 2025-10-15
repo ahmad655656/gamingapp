@@ -10,11 +10,17 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 // 🛑 تم حذف: تعريف geistMono و geistSans
 
+// src/app/layout.js (الإصلاح الموصى به)
+
 export const metadata = {
   title: "ألعاب الذكاء",
   description: "تطبيق ألعاب الذكاء",
+  
+  // 👈 إضافة المسار إلى ملف manifest.json
+  manifest: "/manifest.json", 
 };
 
+// ... باقي الكود يظل كما هو
 export default function RootLayout({ children }) {
   return (
     <html

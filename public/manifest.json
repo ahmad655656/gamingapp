@@ -2,7 +2,7 @@
   "name": "Haedara Gaming",
   "short_name": "HaedaraGame",
   "description": "تطبيق ألعاب الذكاء والألغاز الممتع من Haedara! اكتشف ألعابًا تختبر ذكاءك وتمنحك التسلية والتحدي في أي وقت.",
-  "dir": "ltr",
+  "dir": "rtl",
   "lang": "ar",
   "display": "standalone",
   "start_url": "/",
