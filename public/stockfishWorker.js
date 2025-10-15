@@ -1,7 +1,11 @@
-importScripts('https://cdnjs.cloudflare.com/ajax/libs/stockfish/10.0.2/stockfish.js');
+// public/stockfishWorker.js
+importScripts("/stockfish.js");
 
-const engine = STOCKFISH();
+const engine = typeof STOCKFISH === "function" ? STOCKFISH() : null;
 
-engine.onmessage = (event) => postMessage(event.data);
-
-onmessage = (e) => engine.postMessage(e.data);
+if (engine) {
+  engine.onmessage = (event) => postMessage(event.data);
+  onmessage = (e) => engine.postMessage(e.data);
+} else {
+  postMessage("خطأ: لم يتم تحميل محرك Stockfish بشكل صحيح!");
+}
