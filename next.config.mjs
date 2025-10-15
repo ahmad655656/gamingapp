@@ -7,12 +7,14 @@ const withPWA = nextPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
+  // تعطيل PWA في بيئة التطوير المحلية
   disable: process.env.NODE_ENV === 'development',
 });
 
 // 2. تعريف الإعدادات الأساسية لـ Next.js
 const nextConfig = {
-    experimental: { appDir: true }, // مهم جدًا
+  // 🛑 تم حذف: experimental: { appDir: true }
+  // لأن App Router هو الافتراضي في Next.js 15
   images: {
     domains: ["images.pexels.com", "images.unsplash.com"],
   },
